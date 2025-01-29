@@ -2,18 +2,20 @@
 
 const clock_container_one = document.querySelector('.clock_container_one');
 const clock_container_two = document.querySelector('.clock_container_two');
-
+const layout = document.querySelector('.layout');
 const digitalClockBtn = document.getElementById('digital_clock');
 const stopWatchBtn = document.getElementById('stop_watch');
 
 digitalClockBtn.addEventListener('click', () => {
 	clock_container_one.classList.remove('active');
 	clock_container_two.classList.add('active');
+	layout.style.display = 'none';
 });
 
 stopWatchBtn.addEventListener('click', () => {
 	clock_container_one.classList.add('active');
 	clock_container_two.classList.remove('active');
+	layout.style.display = 'none';
 });
 
 //Digital Clock JavaScript Code

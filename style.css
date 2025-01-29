@@ -1,76 +1,189 @@
-@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
-.clock_container {
-  width: 100%;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #000;
+/* Navigation Button Styles */
+.container {
+	width: 100%;
+	height: 30%;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #000;
+	position: absolute;
+}
+.container button {
+	font-family: 'Space Mono';
+	font-size: clamp(12px, 5vw, 15px);
+	letter-spacing: 2px;
+	color: mediumspringgreen;
+	padding: 10px;
+	margin: 20px;
+	border: none;
+	border-radius: 20px;
+	background-color: transparent;
+	border-top: 1px solid mediumseagreen;
+	border-bottom: 2px solid mediumseagreen;
+	animation: glow infinite ease-in-out 1s;
+}
+/* Digital Clock Styles */
+.clock_container_one {
+	width: 100%;
+	min-height: 70%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #000;
+}
+.title {
+	font-family: 'Silkscreen';
+	font-size: clamp(20px, 8vw, 30px);
+	letter-spacing: 1px;
+	font-weight: normal;
+	text-align: center;
+	margin: 20px;
+	color: mediumspringgreen;
+	text-shadow: mediumspringgreen 0px 0px 2px;
+	animation: glow infinite ease-in-out 1s;
+}
+.clock_app {
+	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+}
+.clock_app h1 {
+	font-family: 'Silkscreen';
+	font-size: clamp(20px, 8vw, 30px);
+	letter-spacing: 1px;
+	font-weight: normal;
+	text-align: center;
+	margin: 20px;
+	color: mediumspringgreen;
+	text-shadow: mediumspringgreen 0px 0px 2px;
+}
+.twelve,
+.twenty_four span {
+	font-family: 'Silkscreen';
+	font-size: clamp(20px, 8vw, 30px);
+	letter-spacing: 1px;
+	font-weight: normal;
+	text-align: center;
+	color: mediumspringgreen;
+	text-shadow: mediumspringgreen 0px 0px 2px;
+	animation: glow infinite ease-in-out 1s;
+}
+.twelve .meridian {
+	font-family: 'Silkscreen';
+	font-size: clamp(10px, 5vw, 20px);
+	letter-spacing: 1px;
+	font-weight: normal;
+	text-align: center;
+	color: mediumspringgreen;
+	text-shadow: mediumspringgreen 0px 0px 2px;
+	animation: glow infinite ease-in-out 1s;
+}
+.underline {
+	display: none;
+}
+/* Stop Watch Styles */
+.clock_container_two {
+	width: 100%;
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #000;
 }
 h1 {
-  font-family: "Silkscreen";
-  font-size: clamp(20px, 8vw, 30px);
-  font-weight: normal;
-  text-align: center;
-  margin: 20px;
-  color: mediumspringgreen;
-  text-shadow: mediumspringgreen 0px 0px 2px;
-  animation: glow infinite ease-in-out 1s;
-  letter-spacing: 1px;
+	font-family: 'Silkscreen';
+	font-size: clamp(20px, 8vw, 30px);
+	font-weight: normal;
+	text-align: center;
+	margin: 20px;
+	color: mediumspringgreen;
+	text-shadow: mediumspringgreen 0px 0px 2px;
+	animation: glow infinite ease-in-out 1s;
+	letter-spacing: 1px;
 }
 .clock_time {
-  display: flex;
-  flex-wrap: nowrap;
-  margin: 20px;
-  text-align: center;
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 20px;
+	text-align: center;
 }
 .clock_time span {
-  font-family: "Tourney";
-  font-weight: 500;
-  font-size: clamp(15px, 15vw, 40px);
-  padding: clamp(0px, 2vw, 20px);
-  border-radius: 10px;
-  color: mediumspringgreen;
-  text-shadow: mediumspringgreen 0px 0px 2px;
+	font-family: 'Tourney';
+	font-weight: 500;
+	font-size: clamp(15px, 15vw, 40px);
+	padding: clamp(0px, 2vw, 20px);
+	border-radius: 10px;
+	color: mediumspringgreen;
+	text-shadow: mediumspringgreen 0px 0px 2px;
 }
 .clock_btn {
-  display: flex;
-  margin-top: 20px;
+	display: flex;
+	margin-top: 20px;
 }
 .clock_btn button {
-  font-family: "Space Mono";
-  font-size: clamp(12px, 5vw, 15px);
-  letter-spacing: 2px;
-  color: mediumspringgreen;
-  padding: 10px 20px;
-  margin: 10px;
-  border: none;
-  border-radius: 20px;
-  background-color: transparent;
-  border-right: 2px solid mediumseagreen;
-  border-left: 2px solid mediumseagreen;
-  animation: glow infinite ease-in-out 1s;
+	font-family: 'Space Mono';
+	font-size: clamp(12px, 5vw, 15px);
+	letter-spacing: 2px;
+	color: mediumspringgreen;
+	padding: 10px 20px;
+	margin: 10px;
+	border: none;
+	border-radius: 20px;
+	background-color: transparent;
+	border-right: 2px solid mediumseagreen;
+	border-left: 2px solid mediumseagreen;
+	animation: glow infinite ease-in-out 1s;
 }
-
+/* Navigation Time Active State Style */
+.active {
+	display: none;
+}
+/* Some Animation For Letter Glow */
 @keyframes glow {
-  0% {
-    text-shadow: mediumspringgreen 0px 0px 2px;
-  }
-  100% {
-    text-shadow: mediumspringgreen 0px 0px 10px;
-  }
+	0% {
+		text-shadow: mediumspringgreen 0px 0px 2px;
+	}
+	100% {
+		text-shadow: mediumspringgreen 0px 0px 10px;
+	}
+}
+/* Starting Media Query */
+
+@media screen and (max-width: 560px) {
+	.clock_app {
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		text-align: center;
+	}
+	.underline {
+		display: block;
+	}
+	.bar {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 370px) {
-  .clock_btn {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-  }
+	.clock_btn {
+		display: flex;
+		flex-direction: column;
+		margin-top: 20px;
+	}
 }

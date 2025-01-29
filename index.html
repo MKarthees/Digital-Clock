@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stop Watch | Karthees</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="clock_container">
-      <h1>Stop Watch</h1>
-      <div class="clock_time">
-        <span id="hour">00</span>
-        <span>:</span>
-        <span id="min">00</span>
-        <span>:</span>
-        <span id="sec">00</span>
-      </div>
-      <div class="clock_btn">
-        <button onclick="startTimer()">Start</button>
-        <button onclick="stopTimer()">Stop</button>
-        <button onclick="resetTimer()">Reset</button>
-      </div>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Digital Clock | Stop Watch - Karthees</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- This is Switch for Digital Clock or Stop Watch (Navigation) -->
+		<div class="container">
+			<button id="digital_clock" onclick="digitalWatch()">Digital Clock</button>
+			<button id="stop_watch" onclick="stopWatch()">Stop Watch</button>
+		</div>
+		<!-- Digital Clock -->
+		<div class="clock_container_one">
+			<h3 class="title">Digital Clock</h3>
 
-    <script src="script.js"></script>
-  </body>
+			<div class="clock_app">
+				<div class="twenty_four">
+					<h1>24 Hour Clock</h1>
+					<span class="time" id="twenty_four_display">00:00:00</span>
+				</div>
+
+				<h1 class="bar">|</h1>
+				<h1 class="underline">---</h1>
+
+				<div class="twelve">
+					<h1>12 Hour Clock</h1>
+
+					<span class="time" id="twelve_display">00:00:00</span>
+					<span class="meridian" id="meridian"></span>
+				</div>
+			</div>
+		</div>
+		<!-- Stop Watch -->
+		<div class="clock_container_two">
+			<h1>Stop Watch</h1>
+			<div class="clock_time">
+				<span id="hour">00</span>
+				<span>:</span>
+				<span id="min">00</span>
+				<span>:</span>
+				<span id="sec">00</span>
+			</div>
+			<div class="clock_btn">
+				<button class="start_btn">Start</button>
+				<button class="stop_btn" onclick="stopTimer()">Stop</button>
+				<button class="reset_btn" onclick="resetTimer()">Reset</button>
+			</div>
+		</div>
+		<!-- Digital Clock & Stop Watch JavaScript -->
+		<script src="script.js"></script>
+	</body>
 </html>
